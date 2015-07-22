@@ -1,0 +1,73 @@
+{
+  "name": "react-swal",
+  "version": "0.1.0",
+  "description": "React wrapper for SweetAlert",
+  "main": "lib/sweetalert.js",
+  "scripts": {
+    "lint": "eslint .",
+    "mocha": "mocha",
+    "test": "npm run lint && npm run mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lanetix/react-swal.git"
+  },
+  "keywords": [
+    "react",
+    "sweetalert"
+  ],
+  "author": "Lanetix <engineering@lanetix.com> (https://github.com/lanetix/)",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/mit-license.php"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/lanetix/react-swal/issues"
+  },
+  "homepage": "https://github.com/lanetix/react-swal#readme",
+  "peerDependencies": {
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "babel": "^5.8.3",
+    "babel-eslint": "^3.1.26",
+    "chance": "^0.7.6",
+    "eslint": "^0.24.1",
+    "eslint-plugin-nodeca": "^1.0.3",
+    "eslint-plugin-react": "^3.0.0",
+    "jsdom": "^5.6.1",
+    "mocha": "^2.2.5",
+    "mocha-jsdom": "^1.0.0",
+    "proxyquire": "^1.6.0",
+    "random-string": "^0.1.2",
+    "react-tools": "^0.13.3",
+    "should": "^7.0.2",
+    "sinon": "^1.15.4"
+  },
+  "dependencies": {
+    "lodash.pick": "^3.1.0",
+    "sweetalert": "^1.0.1"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "blacklist": [ "regenerator" ],
+          "ignore": "browserify-shim",
+          "optional": [
+            "es6.arrowFunctions",
+            "es6.blockScoping",
+            "es6.classes",
+            "es6.properties.shorthand",
+            "es6.spread",
+            "es6.templateLiterals",
+            "es7.objectRestSpread"
+          ]
+        }
+      ]
+    ]
+  }
+}

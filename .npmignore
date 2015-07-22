@@ -1,0 +1,7 @@
+test/
+.npmignore
+.gitignore
+.eslintignore
+.eslintrc
+.nvmrc
+circle.yml

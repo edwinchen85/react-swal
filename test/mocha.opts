@@ -1,0 +1,6 @@
+--recursive
+--require should
+--ui bdd
+--reporter spec
+--timeout 1000
+--compilers js:babel/register
