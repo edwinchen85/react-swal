@@ -1,6 +1,6 @@
 {
   "name": "react-swal",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React wrapper for SweetAlert",
   "main": "lib/sweetalert.js",
   "scripts": {
