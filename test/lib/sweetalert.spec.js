@@ -16,6 +16,20 @@ describe('<SweetAlert />', function () {
   let SweetAlert,
       mock;
 
+  describe('when sweetalert does not load', () => {
+    beforeEach(function () {
+      SweetAlert = proxyquire.noCallThru().load('../../lib/sweetalert', {
+        'sweetalert': { isThisAFunction: 'nope' }
+      });
+    });
+
+    it('should not throw', () => {
+      (function () {
+        TestUtils.renderIntoDocument(<SweetAlert isOpen={true} />);
+      }).should.not.throw();
+    });
+  });
+
   beforeEach(function () {
     mock = sinon.expectation.create('sweetalert');
     mock.never();
