@@ -4,8 +4,11 @@
   "description": "React wrapper for SweetAlert",
   "main": "lib/sweetalert.js",
   "scripts": {
-    "lint": "eslint .",
+    "babel": "babel ./src --out-dir ./lib",
+    "compile": "npm run babel",
+    "lint": "standard",
     "mocha": "mocha",
+    "prepublish": "npm run compile",
     "test": "npm run lint && npm run mocha"
   },
   "repository": {
@@ -28,49 +31,28 @@
   },
   "homepage": "https://github.com/lanetix/react-swal#readme",
   "peerDependencies": {
-    "react": "^0.13.3"
+    "react": "^0.14"
   },
   "devDependencies": {
     "babel": "^5.8.3",
     "babel-eslint": "^4.1.6",
     "chance": "^0.7.6",
-    "eslint": "^0.24.1",
-    "eslint-plugin-nodeca": "^1.0.3",
-    "eslint-plugin-react": "^3.0.0",
     "jsdom": "^5.6.1",
     "mocha": "^2.2.5",
     "mocha-jsdom": "^1.0.0",
     "proxyquire": "^1.6.0",
     "random-string": "^0.1.2",
-    "react-tools": "^0.13.3",
+    "react-addons-test-utils": "^0.14.7",
     "should": "^7.0.2",
-    "sinon": "^1.15.4"
+    "sinon": "^1.15.4",
+    "standard": "^6.0.5"
   },
   "dependencies": {
     "lodash.isfunction": "^3.0.6",
     "lodash.pick": "^3.1.0",
     "sweetalert": "^1.0.1"
   },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "blacklist": [
-            "regenerator"
-          ],
-          "ignore": "browserify-shim",
-          "optional": [
-            "es6.arrowFunctions",
-            "es6.blockScoping",
-            "es6.classes",
-            "es6.properties.shorthand",
-            "es6.spread",
-            "es6.templateLiterals",
-            "es7.objectRestSpread"
-          ]
-        }
-      ]
-    ]
+  "standard": {
+    "parser": "babel-eslint"
   }
 }

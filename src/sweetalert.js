@@ -1,33 +1,29 @@
-'use strict';
+'use strict'
 
-const isFunction = require('lodash.isfunction');
-const React = require('react');
-const swal = typeof window !== 'undefined' ? require('sweetalert') : null;
-const pick = require('lodash.pick');
+const isFunction = require('lodash.isfunction')
+const React = require('react')
+const swal = typeof window !== 'undefined' ? require('sweetalert') : null
+const pick = require('lodash.pick')
 
 class SweetAlert extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    let isOpen = this.props.isOpen;
+  render () {
+    let isOpen = this.props.isOpen
 
     if (isOpen && isFunction(swal)) {
-      let options = pick(this.props, Object.keys(SweetAlert.defaultProps));
-      swal(options, result => {
+      let options = pick(this.props, Object.keys(SweetAlert.defaultProps))
+      swal(options, (result) => {
         if (this.props.callback) {
-          this.props.callback(result);
+          this.props.callback(result)
         }
-      });
+      })
     }
 
-    return null;
+    return null
   }
 }
 
-SweetAlert.displayName = 'SweetAlert';
+SweetAlert.displayName = 'SweetAlert'
 
 SweetAlert.propTypes = {
   isOpen: React.PropTypes.bool.isRequired,
@@ -60,7 +56,7 @@ SweetAlert.propTypes = {
   inputValue: React.PropTypes.string,
 
   callback: React.PropTypes.func
-};
+}
 
 SweetAlert.defaultProps = {
   type: 'warning',
@@ -84,6 +80,6 @@ SweetAlert.defaultProps = {
   inputType: 'text',
   inputPlaceholder: null,
   inputValue: null
-};
+}
 
-module.exports = SweetAlert;
+module.exports = SweetAlert

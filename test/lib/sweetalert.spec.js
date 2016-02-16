@@ -1,78 +1,73 @@
-'use strict';
+/*globals describe beforeEach it */
 
-const jsdom = require('mocha-jsdom');
-const React = require('react/addons');
-const TestUtils = React.addons.TestUtils;
-const proxyquire = require('proxyquire');
-const sinon = require('sinon');
-const randomString = require('random-string');
-const Chance = require('chance');
-const chance = new Chance();
+'use strict'
+
+const jsdom = require('mocha-jsdom')
+const React = require('react')
+const TestUtils = require('react-addons-test-utils')
+const proxyquire = require('proxyquire')
+const sinon = require('sinon')
+const randomString = require('random-string')
+const Chance = require('chance')
+const chance = new Chance()
 
 describe('<SweetAlert />', function () {
+  jsdom()
 
-  jsdom();
-
-  let SweetAlert,
-      mock;
+  let SweetAlert, mock
 
   describe('when sweetalert does not load', () => {
     beforeEach(function () {
-      SweetAlert = proxyquire.noCallThru().load('../../lib/sweetalert', {
+      SweetAlert = proxyquire.noCallThru().load('../../src/sweetalert', {
         'sweetalert': { isThisAFunction: 'nope' }
-      });
-    });
+      })
+    })
 
     it('should not throw', () => {
       (function () {
-        TestUtils.renderIntoDocument(<SweetAlert isOpen={true} />);
-      }).should.not.throw();
-    });
-  });
+        TestUtils.renderIntoDocument(<SweetAlert isOpen />)
+      }).should.not.throw()
+    })
+  })
 
   beforeEach(function () {
-    mock = sinon.expectation.create('sweetalert');
-    mock.never();
+    mock = sinon.expectation.create('sweetalert')
+    mock.never()
 
     SweetAlert = proxyquire.noCallThru()
-      .load('../../lib/sweetalert', {
+      .load('../../src/sweetalert', {
         'sweetalert': mock
-      });
-  });
+      })
+  })
 
   describe('when isOpen is false', function () {
-
     beforeEach(function () {
-      TestUtils.renderIntoDocument(<SweetAlert isOpen={false} />);
-    });
+      TestUtils.renderIntoDocument(<SweetAlert isOpen={false} />)
+    })
 
     it('does nothing', function () {
-      mock.verify();
-    });
-
-  });
+      mock.verify()
+    })
+  })
 
   describe('when isOpen is true', function () {
-
     beforeEach(function () {
-      mock.once();
-    });
+      mock.once()
+    })
 
     describe('not specifying props', function () {
-
       beforeEach(function () {
-        TestUtils.renderIntoDocument(<SweetAlert isOpen={true} />);
-      });
+        TestUtils.renderIntoDocument(<SweetAlert isOpen />)
+      })
 
       it('uses default options', function () {
-        mock.verify();
+        mock.verify()
 
-        let call = mock.getCall(0);
-        call.args[0].should.eql(SweetAlert.defaultProps);
-        call.args[1].should.be.type('function');
-      });
-
-    });
+        let call = mock.getCall(0)
+        call.args[0].should.eql(SweetAlert.defaultProps)
+        call.args[1].should.be.type('function')
+      })
+    })
 
     describe('specifying props', function () {
       let props = {
@@ -97,25 +92,22 @@ describe('<SweetAlert />', function () {
         inputType: 'password',
         inputPlaceholder: randomString(),
         inputValue: randomString()
-      };
+      }
 
       beforeEach(function () {
-        mock.once();
+        mock.once()
 
-        TestUtils.renderIntoDocument(<SweetAlert isOpen={true} {...props} />);
-      });
+        TestUtils.renderIntoDocument(<SweetAlert isOpen {...props} />)
+      })
 
       it('overrides the default', function () {
-        mock.verify();
+        mock.verify()
 
-        let call = mock.getCall(0),
-            options = call.args[0];
+        let call = mock.getCall(0)
+        let options = call.args[0]
 
-        Object.keys(props).forEach(prop => options[prop].should.eql(props[prop]));
-      });
-
-    });
-
-  });
-
-});
+        Object.keys(props).forEach((prop) => options[prop].should.eql(props[prop]))
+      })
+    })
+  })
+})
