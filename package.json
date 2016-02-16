@@ -1,11 +1,14 @@
 {
   "name": "react-swal",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "React wrapper for SweetAlert",
   "main": "lib/sweetalert.js",
   "scripts": {
+    "babel": "babel ./src --out-dir ./lib",
+    "compile": "npm run babel",
     "lint": "standard",
     "mocha": "mocha",
+    "prepublish": "npm run compile",
     "test": "npm run lint && npm run mocha"
   },
   "repository": {
