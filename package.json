@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/lanetix/react-swal#readme",
   "peerDependencies": {
-    "react": "^0.13.3"
+    "react": "^0.14"
   },
   "devDependencies": {
     "babel": "^5.8.3",
@@ -42,6 +42,7 @@
     "mocha-jsdom": "^1.0.0",
     "proxyquire": "^1.6.0",
     "random-string": "^0.1.2",
+    "react-addons-test-utils": "^0.14.7",
     "react-tools": "^0.13.3",
     "should": "^7.0.2",
     "sinon": "^1.15.4"

@@ -1,8 +1,8 @@
 'use strict';
 
 const jsdom = require('mocha-jsdom');
-const React = require('react/addons');
-const TestUtils = React.addons.TestUtils;
+const React = require('react');
+const TestUtils = require('react-addons-test-utils');
 const proxyquire = require('proxyquire');
 const sinon = require('sinon');
 const randomString = require('random-string');
