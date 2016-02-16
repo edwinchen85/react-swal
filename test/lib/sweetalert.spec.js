@@ -18,7 +18,7 @@ describe('<SweetAlert />', function () {
 
   describe('when sweetalert does not load', () => {
     beforeEach(function () {
-      SweetAlert = proxyquire.noCallThru().load('../../lib/sweetalert', {
+      SweetAlert = proxyquire.noCallThru().load('../../src/sweetalert', {
         'sweetalert': { isThisAFunction: 'nope' }
       })
     })
@@ -35,7 +35,7 @@ describe('<SweetAlert />', function () {
     mock.never()
 
     SweetAlert = proxyquire.noCallThru()
-      .load('../../lib/sweetalert', {
+      .load('../../src/sweetalert', {
         'sweetalert': mock
       })
   })
