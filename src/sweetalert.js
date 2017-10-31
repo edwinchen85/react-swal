@@ -2,11 +2,11 @@
 
 const isFunction = require('lodash.isfunction')
 const React = require('react')
+const PropTypes = require('prop-types')
 const swal = typeof window !== 'undefined' ? require('sweetalert') : null
 const pick = require('lodash.pick')
 
 class SweetAlert extends React.Component {
-
   render () {
     let isOpen = this.props.isOpen
 
@@ -26,36 +26,36 @@ class SweetAlert extends React.Component {
 SweetAlert.displayName = 'SweetAlert'
 
 SweetAlert.propTypes = {
-  isOpen: React.PropTypes.bool.isRequired,
+  isOpen: PropTypes.bool.isRequired,
 
-  type: React.PropTypes.oneOf([
+  type: PropTypes.oneOf([
     'warning',
     'error',
     'success',
     'info'
   ]),
-  text: React.PropTypes.string,
-  title: React.PropTypes.string,
-  allowEscKey: React.PropTypes.bool,
-  customClass: React.PropTypes.string,
-  allowOutSideClick: React.PropTypes.bool,
-  showCancelButton: React.PropTypes.bool,
-  showConfirmButton: React.PropTypes.bool,
-  confirmButtonText: React.PropTypes.string,
-  confirmButtonColor: React.PropTypes.string,
-  cancelButtonText: React.PropTypes.string,
-  closeOnConfirm: React.PropTypes.bool,
-  closeOnCancel: React.PropTypes.bool,
-  imageUrl: React.PropTypes.string,
-  imageSize: React.PropTypes.string,
-  timer: React.PropTypes.number,
-  html: React.PropTypes.bool,
-  animation: React.PropTypes.bool,
-  inputType: React.PropTypes.string,
-  inputPlaceholder: React.PropTypes.string,
-  inputValue: React.PropTypes.string,
+  text: PropTypes.string,
+  title: PropTypes.string,
+  allowEscKey: PropTypes.bool,
+  customClass: PropTypes.string,
+  allowOutSideClick: PropTypes.bool,
+  showCancelButton: PropTypes.bool,
+  showConfirmButton: PropTypes.bool,
+  confirmButtonText: PropTypes.string,
+  confirmButtonColor: PropTypes.string,
+  cancelButtonText: PropTypes.string,
+  closeOnConfirm: PropTypes.bool,
+  closeOnCancel: PropTypes.bool,
+  imageUrl: PropTypes.string,
+  imageSize: PropTypes.string,
+  timer: PropTypes.number,
+  html: PropTypes.bool,
+  animation: PropTypes.bool,
+  inputType: PropTypes.string,
+  inputPlaceholder: PropTypes.string,
+  inputValue: PropTypes.string,
 
-  callback: React.PropTypes.func
+  callback: PropTypes.func
 }
 
 SweetAlert.defaultProps = {

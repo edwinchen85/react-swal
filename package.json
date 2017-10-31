@@ -31,25 +31,30 @@
   },
   "homepage": "https://github.com/lanetix/react-swal#readme",
   "peerDependencies": {
-    "react": "^15"
+    "react": ">=15"
   },
   "devDependencies": {
-    "babel": "^5.8.3",
-    "babel-eslint": "^4.1.6",
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
     "chance": "^0.7.6",
     "jsdom": "^5.6.1",
     "mocha": "^2.2.5",
     "mocha-jsdom": "^1.0.0",
     "proxyquire": "^1.6.0",
     "random-string": "^0.1.2",
-    "react-addons-test-utils": "^15.3.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "should": "^7.0.2",
     "sinon": "^1.15.4",
-    "standard": "^6.0.5"
+    "standard": "^10.0.3"
   },
   "dependencies": {
     "lodash.isfunction": "^3.0.6",
     "lodash.pick": "^3.1.0",
+    "prop-types": "^15.6.0",
     "sweetalert": "^1.0.1"
   },
   "standard": {
