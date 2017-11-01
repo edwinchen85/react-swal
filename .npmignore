@@ -1,9 +1,11 @@
 src/
 test/
 
+.babelrc
 .npmignore
 .gitignore
 .eslintignore
 .eslintrc
 .nvmrc
 circle.yml
+package-lock.json

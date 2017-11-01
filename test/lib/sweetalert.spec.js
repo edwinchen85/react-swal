@@ -1,10 +1,10 @@
-/*globals describe beforeEach it */
+/* globals describe beforeEach it */
 
 'use strict'
 
 const jsdom = require('mocha-jsdom')
 const React = require('react')
-const TestUtils = require('react-addons-test-utils')
+const TestUtils = require('react-dom/test-utils')
 const proxyquire = require('proxyquire')
 const sinon = require('sinon')
 const randomString = require('random-string')
