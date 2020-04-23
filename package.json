@@ -1,6 +1,6 @@
 {
   "name": "react-swal-type",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This is a git clone from react-swal npm package. Added a simple typescript file to prevent compilation error",
   "main": "lib/sweetalert.js",
   "types": "index.d.ts",
