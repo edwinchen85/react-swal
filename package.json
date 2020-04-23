@@ -1,8 +1,9 @@
 {
-  "name": "react-swal",
-  "version": "3.0.0",
-  "description": "React wrapper for SweetAlert",
+  "name": "react-swal-type",
+  "version": "1.0.0",
+  "description": "This is a git clone from react-swal npm package. Added a simple typescript file to prevent compilation error",
   "main": "lib/sweetalert.js",
+  "types": "index.d.ts",
   "scripts": {
     "babel": "babel ./src --out-dir ./lib",
     "compile": "npm run babel",
@@ -15,11 +16,8 @@
     "type": "git",
     "url": "git+https://github.com/lanetix/react-swal.git"
   },
-  "keywords": [
-    "react",
-    "sweetalert"
-  ],
-  "author": "Lanetix <engineering@lanetix.com> (https://github.com/lanetix/)",
+  "keywords": ["react", "sweetalert"],
+  "author": "Edwin Chen",
   "licenses": [
     {
       "type": "MIT",
@@ -29,7 +27,6 @@
   "bugs": {
     "url": "https://github.com/lanetix/react-swal/issues"
   },
-  "homepage": "https://github.com/lanetix/react-swal#readme",
   "peerDependencies": {
     "react": ">=15"
   },
@@ -40,8 +37,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "chance": "^0.7.6",
-    "jsdom": "^5.6.1",
-    "mocha": "^2.2.5",
+    "jsdom": "^16.2.2",
+    "mocha": "^7.1.1",
     "mocha-jsdom": "^1.0.0",
     "proxyquire": "^1.6.0",
     "random-string": "^0.1.2",
